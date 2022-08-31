@@ -43,11 +43,11 @@ export class ShapesForm extends Component<ShapesFormState>{
         return isLoading ? 
             <LoadingSpinner/> :
             <div>
-                <p>Please select a shape and color(s), then click the button to render the draggable image.</p>
+                <p>Please select a shape and at least two colors, then click the button to render the draggable image.</p>
                 <div className="select">{shapesDropdown}</div>
                 <div className="select">{colorsDropdown}</div>
                 <div className="buttonWrapper">
-                    <button disabled={this.state.SelectedShape.name == '' || this.state.SelectedColors.length < 1} onClick={this.onClick}>Render</button>
+                    <button disabled={this.state.SelectedShape.name == '' || this.state.SelectedColors.length < 2} onClick={this.onClick}>Render</button>
                 </div>
             </div>;
     }

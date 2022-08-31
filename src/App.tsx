@@ -35,8 +35,11 @@ class App extends Component<ShapesState> {
             <DraggableShape Shape={this.state.SelectedShape} Colors={this.state.SelectedColors} HandleClick={this.handleClick}/>
             : <ShapesForm Shapes={[]} Colors={[]} ShapesLoading={true} ColorsLoading={true} HasError={false} Render={false} HandleClick={this.handleClick} SelectedShape={{"name":""}} SelectedColors={[]} />
 
-        return <div className="mainWrapper">
-                <div className="mainContainer">{shapeContext}</div>
+        return <div className="mainWrapper">                
+                    <div className="mainContainer">
+                        <h1>Shape Selector</h1>
+                        {shapeContext}
+                    </div>
                 </div>
     }
 }
