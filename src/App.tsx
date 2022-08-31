@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Reactm, { Component } from 'react';
+import './Css/App.css';
+import { DraggableShape } from './DraggableShape';
+import { ErrorMessage } from './ErrorMessage';
+import { LoadingSpinner } from './LoadingSpinner';
+import { ShapesForm, ShapesFormState } from './ShapesForm';
+import { Shape, Color } from './ShapesInterfaces';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface ShapesState {
+    Shapes: Shape[],
+    SelectedShape: any,
+    Colors: Color[],
+    SelectedColors: Color[],
+    IsLoading: boolean,
+    HasError: boolean,
+    RenderShape: boolean
+}
+
+class App extends Component<ShapesState> {
+    public state: ShapesState;
+    selectedColors: Color[] = [];
+    renderShape: boolean = false;
+
+    constructor(props: ShapesState) {
+        super(props);
+        this.state = {...props};
+    }
+
+    handleClick = (renderShape: boolean, selectedShape: Shape, selectedColors: Color[]) => {
+        this.setState({ RenderShape: renderShape, SelectedShape: selectedShape, SelectedColors: selectedColors});
+    }
+
+    public render() {
+        let shapeContext = this.state.RenderShape ?
+            <DraggableShape Shape={this.state.SelectedShape} Colors={this.state.SelectedColors} HandleClick={this.handleClick}/>
+            : <ShapesForm Shapes={[]} Colors={[]} ShapesLoading={true} ColorsLoading={true} HasError={false} Render={false} HandleClick={this.handleClick} SelectedShape={{"name":""}} SelectedColors={[]} />
+
+        return <div className="mainWrapper">
+                <div className="mainContainer">{shapeContext}</div>
+                </div>
+    }
 }
 
 export default App;

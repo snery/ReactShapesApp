@@ -10,8 +10,11 @@
     "@types/node": "^16.11.56",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "bootstrap": "^5.2.0",
+    "multiselect-react-dropdown": "^2.0.25",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-draggable": "^4.4.5",
     "react-scripts": "5.0.1",
     "typescript": "^4.8.2",
     "web-vitals": "^2.1.4"
@@ -39,5 +42,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^5.2.3",
+    "eslint-config-react-app": "^7.0.1",
+    "jest-editor-support": "^30.1.0"
   }
 }
