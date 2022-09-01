@@ -45,14 +45,14 @@
 
 .transformColor {
     animation-name:             changeColor;
-    animation-duration:         1s;
+    animation-duration:         2s;
     animation-direction:        alternate;
     animation-iteration-count:  infinite;
 }
 
 .transformColorTriangle {
     animation-name:             changeColorTriangle;
-    animation-duration:         1s;
+    animation-duration:         2s;
     animation-direction:        alternate;
     animation-iteration-count:  infinite;
 }

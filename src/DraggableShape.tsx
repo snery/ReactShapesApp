@@ -55,17 +55,15 @@ export class DraggableShape extends Component<DraggableShapeState>{
 
         var now = new Date();
         var secondsOffset = now.getSeconds() - this.date.getSeconds();
+
         if (secondsOffset >= 2 || secondsOffset <= -2) {
             this.date = new Date();
-            let priorIndex = this.colorIndex;
             this.colorIndex++;
+
             if(this.colorIndex > this.colorsCount){
                 this.colorIndex = 0;
             }
-
-            if(this.state.Colors[priorIndex]){
-                document.documentElement.style.setProperty("--start-color", this.state.Colors[priorIndex]?.name);
-            }
+            
             if(this.state.Colors[this.colorIndex]){
                 document.documentElement.style.setProperty("--end-color", this.state.Colors[this.colorIndex]?.name);
             }
