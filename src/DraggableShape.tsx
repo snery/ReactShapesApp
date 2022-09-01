@@ -1,4 +1,4 @@
-import { Component, ReactNode } from "react";
+import { Component } from "react";
 import Draggable from "react-draggable";
 import { Color, Shape } from "./ShapesInterfaces";
 import './Css/Shapes.css';
@@ -26,6 +26,7 @@ export class DraggableShape extends Component<DraggableShapeState>{
 
     public render() {
         return <div>
+                    <p>Drag the shape to make it change colors!</p>
                     <Draggable onDrag={this.onDragEvent}>
                         <div id="draggableDiv" className={this.state.Shape.name} 
                             style={this.state.Shape.name == 'triangle' ? {"borderBottomColor": this.state.Colors[0].name } 

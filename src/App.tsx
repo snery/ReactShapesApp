@@ -1,8 +1,6 @@
 import Reactm, { Component } from 'react';
 import './Css/App.css';
 import { DraggableShape } from './DraggableShape';
-import { ErrorMessage } from './ErrorMessage';
-import { LoadingSpinner } from './LoadingSpinner';
 import { ShapesForm, ShapesFormState } from './ShapesForm';
 import { Shape, Color } from './ShapesInterfaces';
 

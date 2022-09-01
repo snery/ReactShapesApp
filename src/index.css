@@ -11,16 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.select{
-  width: 50%;
-  margin: 1em;
-}
-
-.shapeOption{
-  font-size: 14px;
-}
-
-.multiselectContainer li {
-  padding: 2px;
-}
